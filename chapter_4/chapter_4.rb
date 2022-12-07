@@ -23,7 +23,7 @@
 # 8. Perform calculations to work out the averages.
 
 # Loading Text Files and Counting Lines
-text = ""
+text = ''
 line_count = 0
 File.open('text.txt').each do |line|
   line_count += 1
@@ -66,3 +66,10 @@ puts "#{sentence_count} sentences"
 
 puts "#{sentence_count / paragraph_count} sentences per paragraph (average)"
 puts "#{word_count / sentence_count} words per sentence (average)"
+
+# Percentage of "Useful" Words
+words = text.scan(/\w+/)
+stopwords = %w[the a by on for of are with just but and to the my I has some in]
+keywords = words.select { |word| !stopwords.include?(word) }
+percentage_keywords = ((keywords.length.to_f / words.length.to_f) * 100).to_i
+puts "#{percentage_keywords}% of words are non-fluff words"
