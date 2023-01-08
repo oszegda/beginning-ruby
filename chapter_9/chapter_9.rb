@@ -104,3 +104,7 @@ f.close
 f = File.open('chapter_9/text_3.txt', 'r+')
 f.putc 'X'
 f.close
+
+f = File.open('chapter_9/text_3.txt', 'r+')
+f.write '123456'
+f.close
