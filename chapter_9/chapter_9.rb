@@ -95,3 +95,9 @@ f = File.open('chapter_9/logfile.txt', 'a')
 f.puts Time.now
 f.close
 
+f = File.open('chapter_9/text_3.txt', 'r+')
+puts f.gets
+f.puts 'This is a test 2'
+puts f.gets
+f.close
+
