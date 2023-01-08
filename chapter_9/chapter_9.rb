@@ -101,3 +101,6 @@ f.puts 'This is a test 2'
 puts f.gets
 f.close
 
+f = File.open('chapter_9/text_3.txt', 'r+')
+f.putc 'X'
+f.close
