@@ -1,1 +1,1 @@
-Test full of tests
+This is a test

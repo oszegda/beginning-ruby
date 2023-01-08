@@ -94,3 +94,4 @@ end
 f = File.open('chapter_9/logfile.txt', 'a')
 f.puts Time.now
 f.close
+
