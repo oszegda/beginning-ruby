@@ -2,25 +2,25 @@
 
 # Modules, Namespaces, and Mix-Ins
 
-def random
+def random #:nodoc: all
   rand(1_000_000)
 end
 
-def random
+def random #:nodoc: all
   rand(65..90).chr
 end
 
 puts random
 
 # top-level documentation
-module NumberStuff
+module NumberStuff #:nodoc: all
   def self.random
     rand(1_000_000)
   end
 end
 
 # top-level documentation
-module LetterStuff
+module LetterStuff #:nodoc: all
   def self.random
     rand(65..90).chr
   end
@@ -30,15 +30,15 @@ puts NumberStuff.random
 puts LetterStuff.random
 
 # top-level documentation
-module ToolBox
-  class Ruler
+module ToolBox #:nodoc: all
+  class Ruler #:nodoc: all
     attr_accessor :length
   end
 end
 
 # top-level documentation
-module Country
-  class Ruler
+module Country #:nodoc: all
+  class Ruler #:nodoc: all
     attr_accessor :name
   end
 end
@@ -49,13 +49,13 @@ b = Country::Ruler.new
 b.name = 'Genghis Khan from Moskau'
 
 # top-level documentation
-module UsefulFeatures
+module UsefulFeatures #:nodoc: all
   def class_name
     self.class.to_s
   end
 end
 
-class Person
+class Person #:nodoc: all
   include UsefulFeatures
 end
 
@@ -63,7 +63,7 @@ x = Person.new
 puts x.class_name
 
 # top-level documentation
-module AnotherModule
+module AnotherModule #:nodoc: all
   def do_stuff
     puts 'This is a test'
   end
@@ -99,7 +99,7 @@ puts [1, 2, 3, 4].max
 puts [1, 2, 3, 4].min
 
 # top-level documentation
-class AllVowels
+class AllVowels #:nodoc: all
   VOWELS = %w[a e i o u]
 
   def each
@@ -111,7 +111,7 @@ x = AllVowels.new
 x.each { |v| puts v}
 
 # top-level documentation
-class AllVowels
+class AllVowels #:nodoc: all
   include Enumerable
 
   VOWELSS = %w[a e i o u]
@@ -136,7 +136,7 @@ puts 1 <=> 1
 puts 2 <=> 1
 
 # top-level documentation
-class Song
+class Song #:nodoc: all
   include Comparable
 
   attr_accessor :length
@@ -162,14 +162,14 @@ puts a.between?(c, b)
 
 # Using Mix-Ins with Namespaces and Classes
 
-module Toolbox
-  class Ruler
+module Toolbox #:nodoc: all
+  class Ruler #:nodoc: all
     attr_accessor :length
   end
 end
 
-module Country
-  class Ruler
+module Country #:nodoc: all
+  class Ruler #:nodoc: all
     attr_accessor :name
   end
 end

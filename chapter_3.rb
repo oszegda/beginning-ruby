@@ -159,13 +159,13 @@ x.each do
   puts _1
 end
 
-def each_vowel(&code_block)
+def each_vowel(&code_block) #:nodoc: all
   %w{a e i o u}.each { |vowel| code_block.call(vowel) }
 end
 
 each_vowel {|vowel| puts vowel }
 
-def each_vowel
+def each_vowel #:nodoc: all
   %w{a e i o u}.each { |vowel| yield vowel }
 end
 each_vowel { |vowel| puts vowel}
@@ -179,7 +179,7 @@ puts Time.now
 puts Time.now - 10
 puts Time.now + 86400
 
-class Integer
+class Integer #:nodoc: all
   def seconds
     self
   end

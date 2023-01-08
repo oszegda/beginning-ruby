@@ -2,6 +2,6 @@
 
 # Nested Inclusions
 
-def example
+def example #:nodoc: all
   puts 'Hello!'
 end

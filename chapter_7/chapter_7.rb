@@ -42,7 +42,7 @@ content = response.body
 
 # Open Struct
 
-Person = Struct.new(:name, :age)
+Person = Struct.new(:name, :age) #:nodoc:
 me = Person.new('Fred Bloggs', 25)
 me.age += 1
 

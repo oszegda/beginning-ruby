@@ -3,7 +3,7 @@
 # Basic inclusion
 
 # top-level documentation
-class String
+class String #:nodoc: all
   def vowels
     self.scan(/[aeiou]/i)
   end

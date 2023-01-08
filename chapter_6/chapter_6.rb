@@ -2,29 +2,29 @@
 
 # Classes, Objects and Modules
 
-def perimeter_of_square(side_length)
+def perimeter_of_square(side_length) #:nodoc: all
   side_length * 4
 end
 
-def area_of_square(side_length)
+def area_of_square(side_length) #:nodoc: all
   side_length * side_length
 end
 
-def perimeter_of_triangle(side1, side2, side3)
+def perimeter_of_triangle(side1, side2, side3) #:nodoc: all
   side1 + side2 + side3
 end
 
-def area_of_triangle(base_width, height)
+def area_of_triangle(base_width, height) #:nodoc: all
   base_width * height / 2
 end
 
 # Class method
 
-class Shape
+class Shape #:nodoc: all
 end
 
 # top-level documentation
-class Square < Shape
+class Square < Shape #:nodoc: all
   def initialize(side_length)
     @side_length = side_length
   end
@@ -39,7 +39,7 @@ class Square < Shape
 end
 
 # top-level documentation
-class Triangle < Shape
+class Triangle < Shape #:nodoc: all
   def initialize(base_width, height, side1, side2, side3)
     @base_width = base_width
     @height = height
@@ -48,11 +48,11 @@ class Triangle < Shape
     @side3 = side3
   end
 
-  def area
+  def area #:nodoc: all
     @base_width * @height / 2
   end
 
-  def perimeter
+  def perimeter #:nodoc: all
     @side1 + @side2 + @side3
   end
 end
@@ -73,12 +73,12 @@ puts my_triangle.perimeter
 # Instance or Object Variables - @side_length is instance variable
 
 # top-level documentation
-class Square
+class Square #:nodoc: all
   def initialize(side_length)
     @side_length = side_length
   end
 
-  def are
+  def area #:nodoc: all
     @side_length * @side_length
   end
 end
@@ -99,7 +99,7 @@ puts b.area
 # basic_method
 # -> basic_method': undefined local variable or method `x' for main:Object (NameError)
 
-def basic_method
+def basic_method #:nodoc: all
   x = 50
   puts x
 end
@@ -110,7 +110,7 @@ puts x
 
 # Global Variables
 
-def basic_method
+def basic_method #:nodoc: all
   puts $x
 end
 
@@ -120,7 +120,7 @@ basic_method
 # Class Variables
 
 # top-level documentation
-class Square
+class Square #:nodoc: all
   def initialize
     if defined? @@number_of_squares
       @@number_of_squares += 1
@@ -141,7 +141,7 @@ puts Square.count
 # Class Methods vs. Instance Methods
 
 # top-level documentation
-class Square
+class Square #:nodoc: all
   def self.test_method
     puts 'Hello from the Square class!'
   end
@@ -155,7 +155,7 @@ Square.test_method
 Square.new.test_method
 
 # top-level documentation
-class Square
+class Square #:nodoc: all
   def initialize
     if defined? @@number_of_squares
       @@number_of_squares += 1
@@ -179,7 +179,7 @@ puts Square.count
 # Inheritance
 
 # top-level documentation
-class ParentClass
+class ParentClass #:nodoc: all
   def method1
     puts 'Hello from method1 in the parent class'
   end
@@ -190,7 +190,7 @@ class ParentClass
 end
 
 # top-level documentation
-class ChildClass < ParentClass
+class ChildClass < ParentClass #:nodoc: all
   def method2
     puts 'Hello from method2 in the child class'
   end
@@ -201,20 +201,18 @@ my_object.method1
 my_object.method2
 
 # top-level documentation
-class Person
+class Person #:nodoc: all
   def initialize(name)
     @name = name
   end
 
-  def name
-    @name
-  end
+  attr_reader :name
 end
 
 # top-level documentation
-class Doctor < Person
+class Doctor < Person #:nodoc: all
   def name
-    'Dr. ' + super
+    "Dr. #{super}"
   end
 end
 
@@ -227,7 +225,7 @@ puts x.length
 puts x.upcase
 
 # top-level documentation
-class String
+class String #:nodoc: all
   def length
     20
   end
@@ -238,7 +236,7 @@ puts 'a'.length
 puts 'A really long line of text'.length
 
 # top-level documentation
-class Dog1
+class Dog1 #:nodoc: all
   def talk
     puts 'Woof!'
   end
@@ -248,7 +246,7 @@ my_dog = Dog1.new
 my_dog.talk
 
 # top-level documentation
-class Dog1
+class Dog1 #:nodoc: all
   def talk
     puts 'Howl!'
   end
@@ -262,7 +260,7 @@ a = 'This is a test'
 puts a.methods.join(' ')
 
 # top-level documentation
-class PersonClass
+class PersonClass #:nodoc: all
   attr_accessor :name, :age
 end
 
@@ -274,12 +272,13 @@ puts p.instance_variables
 # Encapsulation
 
 # top-level documentation
-class Person
+class Person #:nodoc: all
   def initialize(name)
     set_name(name)
   end
+
   def name
-    @first_name + ' ' + @last_name
+    "#{@first_name} #{@last_name}"
   end
 
   def set_name(name)
@@ -304,12 +303,13 @@ puts p.name
 
 # After the encapsulation
 # top-level documentation
-class Person
+class Person #:nodoc: all
   def initialize(name)
     set_name(name)
   end
+
   def name
-    @first_name + ' ' + @last_name
+    "#{@first_name} #{@last_name}"
   end
 
   private
@@ -334,24 +334,20 @@ p = Person.new('Fred Bloggs')
 # -> private method `set_last_name' called for #<Person:0x00007f0ad7ef78b8 @first_name="Fred", @last_name="Bloggs"> (NoMethodError)
 
 # top-level documentation
-class Example
-  def anyone_can_access_this
-
-  end
+class Example #:nodoc: all
+  def anyone_can_access_this; end
 
   private
-  def this_is_private
 
-  end
+  def this_is_private; end
 
   public
-  def another_public_method
 
-  end
+  def another_public_method; end
 end
 
 # top-level documentation
-class AnotherExample
+class AnotherExample #:nodoc: all
   def anyone_can_access_this; end
   def this_is_privet; end
   def this_is_also_private; end
@@ -361,17 +357,15 @@ class AnotherExample
 end
 
 # top-level documentation
-class Person
+class Person #:nodoc: all
   def initialize(age)
     @age = age
   end
 
-  def age
-    @age
-  end
+  attr_reader :age
 
   def age_difference_with(other_person)
-    (self.age - other_person.age).abs
+    (age - other_person.age).abs
   end
 
   protected :age
@@ -386,7 +380,7 @@ puts chris.age_difference_with(fred)
 # Polymorphism
 
 # top-level documentation
-class Animal
+class Animal #:nodoc: all
   attr_accessor :name
 
   def initialize(name)
@@ -395,14 +389,14 @@ class Animal
 end
 
 # top-level documentation
-class Cat < Animal
+class Cat < Animal #:nodoc: all
   def talk
     'Meaow!'
   end
 end
 
 # top-level documentation
-class Dog < Animal
+class Dog < Animal #:nodoc: all
   def talk
     'Woof!'
   end
@@ -416,14 +410,15 @@ end
 # Nested Classes
 
 # top-level documentation
-class Drawing
+class Drawing #:nodoc: all
   def self.give_me_a_circle
     Circle.new
   end
-  class Line
+
+  class Line #:nodoc: all
   end
 
-  class Circle
+  class Circle #:nodoc: all
     def what_am_i
       'This is a circle'
     end
@@ -440,15 +435,15 @@ puts b.what_am_i
 
 # The Scope of Constants
 
-def circumference_of_circle(radius)
+def circumference_of_circle(radius) #:nodoc: all
   2 * Pi * radius
 end
 
-Pi = 3.141592
+Pi = 3.141592 #:nodoc:
 puts circumference_of_circle(10)
 
 # top-level documentation
-class OtherPlanet
+class OtherPlanet #:nodoc: all
   Pi = 4.5
   def self.circumference_of_circle(radius)
     2 * Pi * radius
