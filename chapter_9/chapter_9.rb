@@ -124,3 +124,6 @@ end
 
 # Renaming and Deleting Files
 File.rename('chapter_9/text_4.txt', 'chapter_9/text_4.1.txt')
+File.delete('chapter_9/text_4.1.txt')
+File.unlink('chapter_9/text_4.1.txt')
+
