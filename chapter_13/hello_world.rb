@@ -1,7 +1,14 @@
 require 'sinatra'
 
 get '/' do
-  'Hello, world!'
+  %q{<form method="post">
+      Enter your name: <,input type="text" name="name" />
+      <input type="submit" value= "Go!" />
+    </form>}
+end
+
+post '/' do
+  "Hello #{params[:name]}!"
 end
 
 get '/bye' do
