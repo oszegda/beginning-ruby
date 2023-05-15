@@ -4,11 +4,11 @@
 # Input and Output
 # Keyboard Input
 
-#a = gets
-#puts a
+a = gets
+puts a
 
-#line = readline
-#puts line.length
+line = readline
+puts line.length
 
 # I/O
 # Opening and Reading Files
